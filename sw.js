@@ -53,7 +53,7 @@ self.addEventListener('fetch', function(e){
     console.log('[ServiceWorker] fetch', e.request.url);
     e.respondWith(
         caches.match(e.request).then(function(response){
-            return.response || fetch(e.request);
+            return response || fetch(e.request);
         })
     );
 });
